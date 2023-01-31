@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6be742ed2747b6f49b735128d18183ef, type: 3}
-  m_Name: Attack
+  m_Name: Weaken
   m_EditorClassIdentifier: 
-  name: Attack
-  description: Deal 3 damage to target creature.
-  image: {fileID: 21300000, guid: 2d9faad7f691da2488a2b7ad8367d7bb, type: 3}
-  manaCost: 2
+  name: Weaken
+  description: Weaken target by 1
+  image: {fileID: 21300000, guid: e92527f6d0fe45342ab542b47346d45f, type: 3}
+  manaCost: 1
   targetType: 1
   OnPlayEffects:
   - targetType: 1
-    effectType: 0
-    strength: -3
+    effectType: 1
+    strength: -1
     VFXPrefab: {fileID: 2211851911527765065, guid: 4bdc726240da0ea46a433734a0c0c4a0, type: 3}
   OnKillEffects: []

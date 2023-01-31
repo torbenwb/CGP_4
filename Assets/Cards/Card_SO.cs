@@ -77,3 +77,14 @@ public class CardEffect{
         }
     }
 }
+
+public class PassiveEffect
+{
+    public PassiveEffect(int turns, bool stopAttack){
+        turnsRemaining = turns;
+        this.stopAttack = stopAttack;
+    }
+
+    public int turnsRemaining = 0;
+    public bool stopAttack = true;
+}

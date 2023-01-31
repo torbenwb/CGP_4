@@ -16,6 +16,8 @@ public class Enemy : MonoBehaviour
         Creature creature = newCreature.GetComponent<Creature>();
         creature.LoadCreature_SO(creatureType);
         creatures.Add(creature);
+
+        creature.AddPassiveEffect(new PassiveEffect(1, true));
     }
 
     void OnTurnPhaseChange(TurnPhase newTurnPhase)
@@ -55,23 +57,46 @@ public class Enemy : MonoBehaviour
 
     public void StartTurn()
     {
-        foreach(Creature c in creatures){
-            c.SetHealth(c.creatureType.health);
-            c.SetStrength(c.creatureType.strength);
-        }
-
         StartCoroutine(TurnSequence());
     }
 
     IEnumerator TurnSequence()
     {
+        if (creatures.Count < 3){
+            SpawnCreature(creatureType);
+        }
+        
+        yield return new WaitForSeconds(0.5f);
+
         foreach(Creature c in creatures)
         {
-            c.GetComponent<BoardItem>().offset = Vector3.down * 0.5f;
-            player.ChangeHealth(-c.strength);
-            yield return new WaitForSeconds(0.25f);
+            bool attack = true;
 
-            c.GetComponent<BoardItem>().offset = Vector3.zero;
+            List<PassiveEffect> removeEffects = new List<PassiveEffect>();
+            foreach(PassiveEffect p in c.activePassiveEffects){
+                p.turnsRemaining--;
+                if (p.turnsRemaining <= 0) removeEffects.Add(p);
+
+                if (p.stopAttack) attack = false;
+            }
+
+            for(int i = 0; i < removeEffects.Count; i++) c.activePassiveEffects.Remove(removeEffects[i]);
+
+
+            if (attack)
+            {
+                c.GetComponent<BoardItem>().offset = Vector3.down * 0.5f;
+                player.ChangeHealth(-c.strength);
+                yield return new WaitForSeconds(0.25f);
+
+                c.GetComponent<BoardItem>().offset = Vector3.zero;
+            }
+            
+        }
+
+        foreach(Creature c in creatures){
+            c.SetHealth(c.creatureType.health);
+            c.SetStrength(c.creatureType.strength);
         }
 
         TurnManager.EndEnemyTurn();

@@ -12,6 +12,7 @@ public class Creature : MonoBehaviour
     public Image image;
     public TextMeshProUGUI displayHealth;
     public TextMeshProUGUI displayStrength;
+    public List<PassiveEffect> activePassiveEffects = new List<PassiveEffect>();
 
     public void LoadCreature_SO(Creature_SO creatureType){
         this.creatureType = creatureType;
@@ -43,5 +44,10 @@ public class Creature : MonoBehaviour
     {
         strength += amount;
         displayStrength.text = strength.ToString();
+    }
+
+    public void AddPassiveEffect(PassiveEffect passiveEffect)
+    {
+        activePassiveEffects.Add(passiveEffect);
     }
 }

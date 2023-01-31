@@ -44,6 +44,12 @@ public class Player : MonoBehaviour
         displayHealth.text = health.ToString();
     }
 
+    public void SetMana(int amount)
+    {
+        mana = amount;
+        displayMana.text = mana.ToString();
+    }
+
     public void ChangeMana(int amount){
         mana += amount;
         displayMana.text = mana.ToString();
@@ -91,6 +97,7 @@ public class Player : MonoBehaviour
     public void StartTurn()
     {
         DrawCard();
+        SetMana(3);
     }
 
     IEnumerator ResolveCardEffects(Card_SO cardType, GameObject target){
