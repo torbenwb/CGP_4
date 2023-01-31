@@ -403,21 +403,11 @@ MonoBehaviour:
   board: {fileID: 1164585322}
   cardPrefab: {fileID: 7789273951192342551, guid: e87614988bc530040a7d1d9a61047907, type: 3}
   cardsInDeck:
-  - {fileID: 11400000, guid: 14e0b65deb0a23e4a9817b082d57d700, type: 2}
-  - {fileID: 11400000, guid: 14e0b65deb0a23e4a9817b082d57d700, type: 2}
-  - {fileID: 11400000, guid: 14e0b65deb0a23e4a9817b082d57d700, type: 2}
-  - {fileID: 11400000, guid: 14e0b65deb0a23e4a9817b082d57d700, type: 2}
-  - {fileID: 11400000, guid: 14e0b65deb0a23e4a9817b082d57d700, type: 2}
-  - {fileID: 11400000, guid: c8bde5e219305ef4fa4a44a4cadd83f6, type: 2}
-  - {fileID: 11400000, guid: c8bde5e219305ef4fa4a44a4cadd83f6, type: 2}
-  - {fileID: 11400000, guid: c8bde5e219305ef4fa4a44a4cadd83f6, type: 2}
-  - {fileID: 11400000, guid: c8bde5e219305ef4fa4a44a4cadd83f6, type: 2}
-  - {fileID: 11400000, guid: c8bde5e219305ef4fa4a44a4cadd83f6, type: 2}
-  - {fileID: 11400000, guid: 14b2de7238a2e324f8cacc3f893eb0be, type: 2}
-  - {fileID: 11400000, guid: 14b2de7238a2e324f8cacc3f893eb0be, type: 2}
-  - {fileID: 11400000, guid: 14b2de7238a2e324f8cacc3f893eb0be, type: 2}
-  - {fileID: 11400000, guid: 14b2de7238a2e324f8cacc3f893eb0be, type: 2}
-  - {fileID: 11400000, guid: 14b2de7238a2e324f8cacc3f893eb0be, type: 2}
+  - {fileID: 11400000, guid: e938fe35c9e131744a87b342703b0c86, type: 2}
+  - {fileID: 11400000, guid: e938fe35c9e131744a87b342703b0c86, type: 2}
+  - {fileID: 11400000, guid: e938fe35c9e131744a87b342703b0c86, type: 2}
+  - {fileID: 11400000, guid: e938fe35c9e131744a87b342703b0c86, type: 2}
+  - {fileID: 11400000, guid: e938fe35c9e131744a87b342703b0c86, type: 2}
   health: 5
   mana: 5
   displayHealth: {fileID: 518065473}

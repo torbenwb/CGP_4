@@ -20,7 +20,7 @@ public class Card_SO : ScriptableObject
     
 }
 
-public enum TargetType{Player, Creature}
+public enum TargetType{Player, Creature, AllCreatures}
 
 public enum EffectType{
     ChangeHealth, ChangeStrength, ChangeMana, DrawCard
@@ -42,6 +42,10 @@ public class CardEffect{
                 break;
             case TargetType.Creature:
                 TargetCreature(target.GetComponent<Creature>());
+                break;
+            case TargetType.AllCreatures:
+                Creature[] creatures = MonoBehaviour.FindObjectsOfType<Creature>();
+                foreach(Creature c in creatures) TargetCreature(c);
                 break;
         }
     }

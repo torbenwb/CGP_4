@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6be742ed2747b6f49b735128d18183ef, type: 3}
+  m_Name: Scry
+  m_EditorClassIdentifier: 
+  name: Scry
+  description: Draw 1 card.
+  image: {fileID: 21300000, guid: 63cd39be36bc8b342928740b4cf2cbfe, type: 3}
+  manaCost: 1
+  targetType: 0
+  OnPlayEffects:
+  - targetType: 0
+    effectType: 3
+    strength: 1
+    VFXPrefab: {fileID: 0}
+  OnKillEffects: []
